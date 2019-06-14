@@ -16,12 +16,14 @@ public class GameController : MonoBehaviour
     public GameObject EnemyGenerator; //Enlazo el game Object, Desde nuestro main Canvas para poder utilizarlo aca.
     private AudioSource MusicPlayer;
     public Text pointstext;
+    public Text recordtext;
     float scaleTime = 6f;
-    float scaleInc = 0.25f;
+    float scaleInc = 0.12f;
     private int Point = 0;
     void Start()
     {
         MusicPlayer = GetComponent<AudioSource>();
+        recordtext.text = "Best: " + GetMaxScore().ToString();
     }
 
     // Update is called once per frame
@@ -67,7 +69,11 @@ public class GameController : MonoBehaviour
         Background.uvRect = new Rect(Background.uvRect.x + finalspeed, 0f, 1f, 1f);
         // ahora para la plataforma 
         Platform.uvRect = new Rect(Platform.uvRect.x + finalspeed * 3, 0f, 1f, 1f);
+
     }
+    /// <summary>
+    /// reinicio de juego
+    /// </summary>
     public void RestartGame()
     {
         SceneManager.LoadScene("escena_1");
@@ -81,11 +87,27 @@ public class GameController : MonoBehaviour
     {
         CancelInvoke("GameTimeScale");
         Time.timeScale = 1f;
-        Debug.Log("Ritmo Restablecido"+ Time.timeScale.ToString());
+        Debug.Log("Ritmo Restablecido" + Time.timeScale.ToString());
     }
     public void IncreasePoints()
     {
         Point++;
         pointstext.text = Point.ToString();
+        if (Point >= GetMaxScore())
+        {
+            recordtext.text = "BEST: " + Point.ToString();
+            SaveScore(Point);
+        } 
+    }
+    public int GetMaxScore()
+    {
+        return PlayerPrefs.GetInt("Max Points", 0);
+
+    }
+
+
+    public void SaveScore(int currentPoints)
+    {
+        PlayerPrefs.SetInt("Max Points", currentPoints);
     }
 }

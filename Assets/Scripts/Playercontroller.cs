@@ -33,8 +33,13 @@ public class Playercontroller : MonoBehaviour
         if (state != null)
         {
             Animacion.Play(state);
+            
         }
     }
+    /// <summary>
+    /// Que pasa cuando nos topamos con un enemigo
+    /// </summary>
+    /// <param name="other">Un enemigo con una etiqueta de el tipo tal</param>
     private void OnTriggerEnter2D(Collider2D other)
     {//entra en colision contra un trigger
         if (other.gameObject.tag == "Enemy") //el other hace referencia a otra cosa  TAG con el cual el colidder puede chocar, y como es un tag.
@@ -59,4 +64,5 @@ public class Playercontroller : MonoBehaviour
         }
 
     }
+
 }

@@ -182,9 +182,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'LLAMA
-
-'
+  m_Text: "LLAMA JUMP \n"
 --- !u!222 &47628841
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -226,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 060bd8f4c4ceeb64e87b416af39bda82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxspeed: 0.192
+  parallaxspeed: 0.175
   Background: {fileID: 211312177}
   Platform: {fileID: 200311172}
   gamestate: 0
@@ -235,6 +233,7 @@ MonoBehaviour:
   player: {fileID: 1601602220}
   EnemyGenerator: {fileID: 191163387}
   pointstext: {fileID: 149856118}
+  recordtext: {fileID: 1225113581}
 --- !u!114 &80625017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -491,7 +490,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.61864984}
-  m_AnchoredPosition: {x: 229, y: 109}
+  m_AnchoredPosition: {x: 229, y: 117}
   m_SizeDelta: {x: 72.1, y: 73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &191163387
@@ -1072,12 +1071,12 @@ GameObject:
   - component: {fileID: 1225113581}
   - component: {fileID: 1225113580}
   m_Layer: 5
-  m_Name: Informacion
+  m_Name: Record
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1225113579
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1085,16 +1084,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1225113578}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.115, y: 1.115, z: 1.115}
+  m_LocalScale: {x: 1.1149998, y: 1.1149998, z: 1.115}
   m_Children: []
   m_Father: {fileID: 1057905488}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 116, y: 77}
+  m_AnchoredPosition: {x: -225, y: 185}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1225113580
@@ -1138,10 +1137,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 169cdd69e5a68f84886cc8c8cfea93f0, type: 3}
-    m_FontSize: 14
+    m_FontSize: 20
     m_FontStyle: 2
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -1149,7 +1148,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CLICK/ PRESS para Jugar
+  m_Text: 'BEST:'
 --- !u!222 &1225113582
 CanvasRenderer:
   m_ObjectHideFlags: 0
